@@ -50,8 +50,12 @@ app.get("/results", function(req, res){
 });
 
 
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
-    console.log("Server Has Started!");
+const port = process.env.PORT || 3000;
+const ip = process.env.IP || "127.0.0.1";
+app.listen(port,function(){
+    console.log("Server has started .... at port "+ port+" ip: "+ip);
 });
+
+
+
 
