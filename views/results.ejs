@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+  background: black;
+  text-align: center; 
+	}
+</style>
+</head>
+<body>
+<h1 style="color:green;">Movies results</h1>
+
+
+
+<% dataVar["Search"].forEach(function(movie) { %>
+  <li style="color:red;">  <%= movie["Title"] %> - 
+  <%= movie["Year"] %> - <a href= <%= movie["Poster"] %>>image</a>
+
+ 
+  
+  </li>
+<% }) %>
+
+<br>
+<br>
+<br>
+<br>
+
+<h1><<a href= "/">Search again</a>></h1>
+
+</body>
+</html>
+
+
+
+
+
+
