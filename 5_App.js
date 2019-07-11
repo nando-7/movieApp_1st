@@ -50,10 +50,9 @@ app.get("/results", function(req, res){
 });
 
 
-const port = process.env.PORT || 3000;
-const ip = process.env.IP || "127.0.0.1";
-app.listen(port,function(){
-    console.log("Server has started .... at port "+ port+" ip: "+ip);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 
