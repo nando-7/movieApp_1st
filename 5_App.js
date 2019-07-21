@@ -38,7 +38,7 @@ app.get("/results", function(req, res){
         //tentando criar uma variavel. mas nao precisou!
          //var poster = data["Search"][0]["Poster"];
          
-         //testando ate achar a data para postarr links
+         //testando ate achar a data para postar links
         // console.log(data["Search"][0]["Poster"]);
         
         res.render("results.ejs", {dataVar : data});
