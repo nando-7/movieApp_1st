@@ -17,7 +17,11 @@ app.get("/", function(req, res){
 });
 
 app.get("/results", function(req, res){
-    var search = req.query.search;
+    console.log(req.originalUrl);
+    var search = req.originalUrl.slice(16,500);
+    
+    
+    //var search = req.query.search;
     
     //outra maneira de fazer o mesmo
     //var url = "\"http://omdbapi.com/?s="/"" + search + "\"&apikey=thewdb"/"";
