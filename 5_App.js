@@ -18,13 +18,9 @@ app.get("/", function(req, res){
 
 app.get("/results", function(req, res){
     console.log(req.originalUrl);
-    var search = req.originalUrl.slice(16,500);
+    var search = req.originalUrl.slice(16,50);
     
     
-    //var search = req.query.search;
-    
-    //outra maneira de fazer o mesmo
-    //var url = "\"http://omdbapi.com/?s="/"" + search + "\"&apikey=thewdb"/"";
     request("http://omdbapi.com/?s=" + search + "&apikey=thewdb" , function (error, response, body){
         
     if (JSON.parse(body)["Response"] === "False") {
@@ -39,11 +35,7 @@ app.get("/results", function(req, res){
     else if(!error && response.statusCode == 200) {
         var data = JSON.parse(body);
         console.log(JSON.parse(body)["Response"]);
-        //tentando criar uma variavel. mas nao precisou!
-         //var poster = data["Search"][0]["Poster"];
-         
-         //testando ate achar a data para postar links
-        // console.log(data["Search"][0]["Poster"]);
+        
         
         res.render("results.ejs", {dataVar : data});
     } 
